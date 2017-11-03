@@ -28,6 +28,14 @@ public class Archive {
     }
 
     public void utilizeGuest(Room room) {
-
+        Record record = new Record();
+        record.setRoomNumber(room.getNumber());
+        Guest guest = room.getGuest();
+        record.setPersonalData(guest.getPersonalData());
+        String guestCheckInTime = guest.getCheckInTime();
+        String guestCheckOutTime = guest.getCheckOutTime();
+        String timeInterval = guestCheckInTime + "-" + guestCheckOutTime;
+        record.setTimeInterval(timeInterval);
+        records.add(record);
     }
 }

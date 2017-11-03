@@ -109,4 +109,12 @@ public class Controller {
 	public void setRes(Reservation res) {
 		this.res = res;
 	}
+
+	//public static void main(String[] args) {
+
+		         //Controller cc = new Controller();
+		         //System.out.println(cc.makeReservation("sce", "scd"));
+		         //Reservation r = new Reservation();
+		         //this.Reservation(1,"timeint",rd);
+	//}
 }

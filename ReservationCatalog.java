@@ -50,7 +50,7 @@ public class ReservationCatalog {
 	}
 	
 	public void removeReservation(Reservation res) {
-	
+		reservations.remove(res.getReservationID());
 	}
 
 	public HashMap<Integer, Reservation> getReservations() {
