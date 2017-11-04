@@ -56,7 +56,7 @@ public class Main {
                     reader.nextLine();
                     System.out.println("Enter room type");
                     String roomType = reader.nextLine();
-                    System.out.println("Enter time interval d/m/y-d/m/y");
+                    System.out.println("Enter time interval (d/m/yy-d/m/yy format)");
                     String timeInterval = reader.nextLine();
                     boolean answer = controller.check(roomType, timeInterval);
                     if (answer) {
@@ -70,7 +70,7 @@ public class Main {
                     reader.nextLine();
                     System.out.println("Enter room type");
                     String roomType1 = reader.nextLine();
-                    System.out.println("Enter time interval (dd/mm/yyyy-dd/mm/yyyy format)");
+                    System.out.println("Enter time interval (d/m/yy-d/m/yy format)");
                     String timeInterval1 = reader.nextLine();
                     int reservationID = controller.makeReservation(roomType1, timeInterval1);
                     System.out.println("You have successfully made a reservation. Your reservation ID is:" + reservationID);
