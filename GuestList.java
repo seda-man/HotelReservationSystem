@@ -13,33 +13,33 @@
 import java.util.ArrayList;
 
 public class GuestList {
-	private ArrayList<Guest> guests = new ArrayList<>();
+ private ArrayList<Guest> guests = new ArrayList<Guest>();
 
-	public GuestList() {
-		load();
-	}
+ public GuestList() {
+  load();
+ }
 
-	public Guest makeGuest(String personalData, Reservation res) {
-		Guest newGuest = new Guest(personalData, res);
-		guests.add(newGuest);
-		return newGuest;
-	}
+ public Guest makeGuest(String personalData, Reservation res) {
+  Guest newGuest = new Guest(personalData, res);
+  guests.add(newGuest);
+  return newGuest;
+ }
 
-	private void load() {
+ private void load() {
 
-	}
+ }
 
-	public void removeGuest(Guest guest) {
-		guests.remove(guest);
-	}
+ public void removeGuest(Guest guest) {
+  guests.remove(guest);
+ }
 
-	public ArrayList<Guest> getGuests() {
-		return guests;
-	}
+ public ArrayList<Guest> getGuests() {
+  return guests;
+ }
 
-	public void setGuests(ArrayList<Guest> guests) {
-		this.guests = guests;
-	}
+ public void setGuests(ArrayList<Guest> guests) {
+  this.guests = guests;
+ }
 
 
 

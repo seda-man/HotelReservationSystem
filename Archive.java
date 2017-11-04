@@ -13,7 +13,7 @@
 import java.util.ArrayList;
 
 public class Archive {
-    private ArrayList<Record> records = new ArrayList<>();
+    private ArrayList<Record> records = new ArrayList<Record>();
 
     public Archive(){
         load();
