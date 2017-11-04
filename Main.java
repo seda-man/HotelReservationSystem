@@ -121,7 +121,9 @@ public class Main {
                     break;
             }
 
-            printIntro(1, intro);
+            if (n != 0) {
+                printIntro(1, intro);
+            }
         }
         
         reader.close();
