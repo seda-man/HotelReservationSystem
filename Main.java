@@ -2,8 +2,8 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * Created by sedam on 04-Nov-17.
@@ -51,13 +51,15 @@ public class Main {
             n = reader.nextInt();
             switch (n) {
                 case 1:
+                    reader.nextLine();
                     System.out.println("Enter room type");
                     String roomType = reader.nextLine();
                     System.out.println("Enter time interval d/m/y-d/m/y");
                     String timeInterval = reader.nextLine();
                     controller.check(roomType, timeInterval);
                     break;
-                case 2: 
+                case 2:
+                    reader.nextLine();
                     System.out.println("Enter room type");
                     String roomType1 = reader.nextLine();
                     System.out.println("Enter time interval d/m/y-d/m/y");
@@ -101,6 +103,7 @@ public class Main {
                     int number1 = reader.nextInt();
                     controller.freeRoom(number1);
                     break;
+
             }
         }
         
