@@ -15,6 +15,10 @@ import java.util.HashMap;
 public class RoomDescriptionCatalog {
 	private HashMap<String, RoomDescription> roomDescriptions = new HashMap<>();
 
+	public RoomDescriptionCatalog() {
+		load();
+	}
+
 	public RoomDescription getRoomDescription(String roomType) {
 		return roomDescriptions.get(roomType);
 	}

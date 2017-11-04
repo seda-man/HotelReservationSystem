@@ -9,9 +9,6 @@
 //
 //
 
-
-import javafx.util.Pair;
-
 import java.util.ArrayList;
 
 public class Controller {
@@ -21,6 +18,14 @@ public class Controller {
 	private RoomList roomList;
 	private Archive archive;
 	private Reservation res;
+
+	public Controller(GuestList guestList, RoomDescriptionCatalog roomDescriptionCatalog, ReservationCatalog reservationCatalog, RoomList roomList, Archive archive) {
+		this.guestList = guestList;
+		this.roomDescriptionCatalog = roomDescriptionCatalog;
+		this.reservationCatalog = reservationCatalog;
+		this.roomList = roomList;
+		this.archive = archive;
+	}
 
 	public void cancelReservation(int reservationID) {
 		reservationCatalog.cancelReservation(reservationID);

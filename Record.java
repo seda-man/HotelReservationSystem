@@ -41,7 +41,13 @@ public class Record {
 		this.timeInterval = timeInterval;
 	}
 
-	public void create(Room room) {
-	
+	public Record(Room room) {
+		roomNumber = room.getNumber();
+		Guest guest = room.getGuest();
+		personalData = guest.getPersonalData();
+		String guestCheckInTime = guest.getCheckInTime();
+		String guestCheckOutTime = guest.getCheckOutTime();
+		String timeInterval = guestCheckInTime + "-" + guestCheckOutTime;
+		this.timeInterval = timeInterval;
 	}
 }

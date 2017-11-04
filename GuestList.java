@@ -15,6 +15,10 @@ import java.util.ArrayList;
 public class GuestList {
 	private ArrayList<Guest> guests = new ArrayList<>();
 
+	public GuestList() {
+		load();
+	}
+
 	public Guest makeGuest(String personalData, Reservation res) {
 		Guest newGuest = new Guest(personalData, res);
 		guests.add(newGuest);

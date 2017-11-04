@@ -15,6 +15,10 @@ import java.util.ArrayList;
 public class RoomList {
 	private ArrayList<Room> rooms = new ArrayList<>();
 
+	public RoomList() {
+		load();
+	}
+
 	public Room findRoom(int roomNumber) {
 		return rooms.get(roomNumber - 1);
 	}

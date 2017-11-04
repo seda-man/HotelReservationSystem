@@ -13,8 +13,8 @@
 
 
 public class Hotel {
-	private Object address;
-	private Object name;
+	private String address;
+	private String name;
 	private RoomDescriptionCatalog roomDescriptionCatalog;
 	private RoomList roomList;
 	private ReservationCatalog reservationCatalog;
@@ -23,19 +23,30 @@ public class Hotel {
 	private Controller controller;
 
 
-	public Object getAddress() {
+	public Hotel(String name, String address) {
+		this.name = name;
+		this.address = address;
+		roomDescriptionCatalog = new RoomDescriptionCatalog();
+		roomList = new RoomList();
+		reservationCatalog = new ReservationCatalog();
+		guestList = new GuestList();
+		archive = new Archive();
+		controller = new Controller(guestList, roomDescriptionCatalog, reservationCatalog, roomList, archive);
+	}
+
+	public String getAddress() {
 		return address;
 	}
 
-	public void setAddress(Object address) {
+	public void setAddress(String address) {
 		this.address = address;
 	}
 
-	public Object getName() {
+	public String getName() {
 		return name;
 	}
 
-	public void setName(Object name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 

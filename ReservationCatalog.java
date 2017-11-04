@@ -15,6 +15,10 @@ import java.util.HashMap;
 public class ReservationCatalog {
 	private HashMap<Integer, Reservation> reservations = new HashMap<>();
 
+	public ReservationCatalog(){
+		load();
+	}
+
 	public void cancelReservation(int reservationID) {
 		reservations.remove(reservationID);
 	}

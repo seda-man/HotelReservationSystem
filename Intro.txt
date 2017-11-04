@@ -1,0 +1,8 @@
+Welcome to Captain Hook hotel!
+What do you want to do?
+Press 1 to check if there is a free room matching your requirements.
+Press 2 to make a reservation.
+Press 3 to cancel your reservation.
+Press 4 to get list of available rooms.
+Press 5 to check in.
+Press 6 to check out.

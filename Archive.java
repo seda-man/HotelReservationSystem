@@ -15,6 +15,10 @@ import java.util.ArrayList;
 public class Archive {
     private ArrayList<Record> records = new ArrayList<>();
 
+    public Archive(){
+        load();
+    }
+
     public ArrayList<Record> getRecords() {
         return records;
     }
@@ -28,14 +32,7 @@ public class Archive {
     }
 
     public void utilizeGuest(Room room) {
-        Record record = new Record();
-        record.setRoomNumber(room.getNumber());
-        Guest guest = room.getGuest();
-        record.setPersonalData(guest.getPersonalData());
-        String guestCheckInTime = guest.getCheckInTime();
-        String guestCheckOutTime = guest.getCheckOutTime();
-        String timeInterval = guestCheckInTime + "-" + guestCheckOutTime;
-        record.setTimeInterval(timeInterval);
+        Record record = new Record(room);
         records.add(record);
     }
 }
