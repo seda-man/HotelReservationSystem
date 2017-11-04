@@ -6,3 +6,4 @@ Press 3 to cancel your reservation.
 Press 4 to get list of available rooms.
 Press 5 to check in.
 Press 6 to check out.
+Press 0 to exit.

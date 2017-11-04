@@ -30,7 +30,7 @@ public class Room {
 	}
 	
 	public boolean check(RoomDescription roomDesc) {
-		return status && roomDescription.equals(roomDesc);
+		return status && roomDescription.getRoomType().equals(roomDesc.getRoomType());
 	}
 
 	public int getNumber() {

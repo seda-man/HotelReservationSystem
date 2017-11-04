@@ -15,6 +15,7 @@ public class Main {
         Controller controller = hotel.getController();
         String fileName = "Intro.txt";
 
+        ArrayList<String> intro = new ArrayList<String>();
         // This will reference one line at a time
         String line = null;
 
@@ -28,7 +29,7 @@ public class Main {
                     new BufferedReader(fileReader);
 
             while ((line = bufferedReader.readLine()) != null) {
-                System.out.println(line);
+               intro.add(line);
             }
 
             // Always close files.
@@ -44,7 +45,8 @@ public class Main {
             // Or we could just do this:
             // ex.printStackTrace();
         }
-  
+
+        printIntro(0, intro);
         int n = 1;
         Scanner reader = new Scanner(System.in);
         while(n !=0) {
@@ -56,22 +58,29 @@ public class Main {
                     String roomType = reader.nextLine();
                     System.out.println("Enter time interval d/m/y-d/m/y");
                     String timeInterval = reader.nextLine();
-                    controller.check(roomType, timeInterval);
+                    boolean answer = controller.check(roomType, timeInterval);
+                    if (answer) {
+                        System.out.println("There are available rooms that meet your requirements. Proceed to reservation making by pressing 2.");
+                    } else {
+                        System.out.println("Sorry, but there are no rooms that met your requirements. " +
+                                "Try a different room type and/or different time interval.");
+                    }
                     break;
                 case 2:
                     reader.nextLine();
                     System.out.println("Enter room type");
                     String roomType1 = reader.nextLine();
-                    System.out.println("Enter time interval d/m/y-d/m/y");
+                    System.out.println("Enter time interval (dd/mm/yyyy-dd/mm/yyyy format)");
                     String timeInterval1 = reader.nextLine();
                     int reservationID = controller.makeReservation(roomType1, timeInterval1);
-                    System.out.println("Your reservation ID is:" + reservationID);
+                    System.out.println("You have successfully made a reservation. Your reservation ID is:" + reservationID);
                     break; 
 
                 case 3: 
                     System.out.println("Enter your reservationID");
                     int reservationID1 = reader.nextInt();
                     controller.cancelReservation(reservationID1);
+                    System.out.println("Your reservation was canceled");
                     break;
 
                 case 4: 
@@ -93,23 +102,36 @@ public class Main {
                     }
                     System.out.println("Enter the room number:");
                     int number = reader.nextInt();
+                    reader.nextLine();
                     System.out.println("Enter your personal data");
                     String personalData = reader.nextLine();
                     controller.fixRoom(number, personalData);
+                    System.out.println("You have successfully checked in.");
                     break;
 
                 case 6: 
                     System.out.println("Enter your room number");
                     int number1 = reader.nextInt();
                     controller.freeRoom(number1);
+                    System.out.println("You have successfully checked out.");
                     break;
 
+                case 0:
+                    System.out.println("Good bye!");
+                    break;
             }
+
+            printIntro(1, intro);
         }
         
         reader.close();
     }
 
 
+    public static void printIntro(int count, ArrayList<String> intro) {
+        for (;count < intro.size(); count++) {
+            System.out.println(intro.get(count));
+        }
+    }
 }
 
